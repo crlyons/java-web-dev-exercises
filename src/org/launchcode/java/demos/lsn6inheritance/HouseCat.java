@@ -7,15 +7,23 @@ public class HouseCat extends Cat {
     public HouseCat(String aName, double aWeight) {
         super(aWeight);
         name = aName;
-    }
 
+    }
+    public HouseCat(String aName){
+        name = aName;
+    }
     public boolean isSatisfied() {
         return !isHungry() && !isTired();
     }
 
     @Override
     public String noise() {
-        return "Hello, my name is " + name + "!";
+
+        if (isSatisfied()){
+            return "Hello, my name is " + name + "!";
+//        } else{
+//            return super.noise(); //calls the overridden method in the base class via super.noise(), carrying out the original behavior if the given conditional branch is reached
+//        }
     }
 
     public String purr() {
